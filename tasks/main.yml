@@ -1,9 +1,4 @@
 ---
-# tasks file for etcd-container/
-# ETCD_VER=v3.0.12
-# DOWNLOAD_URL=https://github.com/coreos/etcd/releases/download
-# curl -L ${DOWNLOAD_URL}/${ETCD_VER}/etcd-${ETCD_VER}-linux-amd64.tar.gz -o /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz
-
 - name: Create etcd user
   user:
     name: etcd
@@ -18,8 +13,6 @@
     group: root 
     mode: 0666
 
-
-#  mkdir -p /tmp/test-etcd && tar xzvf /tmp/etcd-${ETCD_VER}-linux-amd64.tar.gz -C /tmp/test-etcd --strip-components=1
 - name: Create /etcd dir
   file:
     path: /etcd
@@ -29,9 +22,4 @@
 
 - name: Unpack the tar file
   command: tar xzvf /etcd-{{ ETCD_VER }}-linux-amd64.tar.gz -C /etcd --strip-components=1
-
-# /tmp/test-etcd/etcd --version
-
-# ETCDCTL_API=3 /tmp/test-etcd/etcdctl --endpoints=localhost:2379 put foo "bar"
-# ETCDCTL_API=3 /tmp/test-etcd/etcdctl --endpoints=localhost:2379 get foo
 
