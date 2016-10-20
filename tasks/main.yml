@@ -16,10 +16,16 @@
 - name: Create /etcd dir
   file:
     path: /etcd
+    state: directory
     owner: etcd 
     group: root 
     mode: 0775
 
 - name: Unpack the tar file
   command: "tar xzvf /etcd-{{ ETCD_VER }}-linux-amd64.tar.gz -C /etcd --strip-components=1"
+
+- name: Remove the tar file
+  file:
+    path: "/etcd-{{ ETCD_VER }}-linux-amd64.tar.gz"
+    state: absent
 
