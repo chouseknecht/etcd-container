@@ -2,11 +2,8 @@ etcd:
   image: centos:7
   working_dir: /etcd
   user: etcd 
-  command: ["etcd"]
-
-# -data-dir=/data
-
-# /tmp/test-etcd/etcd --version
-
-# ETCDCTL_API=3 /tmp/test-etcd/etcdctl --endpoints=localhost:2379 put foo "bar"
-# ETCDCTL_API=3 /tmp/test-etcd/etcdctl --endpoints=localhost:2379 get foo
+  command: ["etcd","--data-dir=/data"]
+  environment:
+    - ETCDCTL_API=3
+  # volumes
+  # - <your data volume>:/data
