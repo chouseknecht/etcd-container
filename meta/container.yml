@@ -2,7 +2,7 @@ etcd:
   image: centos:7
   working_dir: /etcd
   user: etcd 
-  command: ["etcd","--data-dir=/data"]
+  command: ["./etcd","--data-dir=/data"]
   environment:
     - ETCDCTL_API=3
   # volumes
