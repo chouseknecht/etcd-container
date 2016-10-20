@@ -1,0 +1,4 @@
+---
+# defaults file for etcd-container/
+ETCD_VER: "v3.0.12"
+DOWNLOAD_URL: "https://github.com/coreos/etcd/releases/download"
