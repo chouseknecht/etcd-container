@@ -18,7 +18,6 @@ script:
   - docker version
   - docker-compose version
   - docker info
-  - mkdir -p tests
   - cd tests
   - ansible-container init
   - echo "Installing and testing git+https://github.com/${TRAVIS_REPO_SLUG},${TRAVIS_COMMIT}"
@@ -26,6 +25,7 @@ script:
   - ansible-container build
   - ansible-container run -d
   - docker ps
+  - ansible-playbook test.yml 
 
 notifications:
   email: false
