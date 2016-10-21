@@ -1,5 +1,7 @@
 # etcd-container 
 
+[![Build Status](https://travis-ci.org/chouseknecht/etcd-container.svg?branch=master)](https://travis-ci.org/chouseknecht/etcd-container)
+
 Adds an etcd service to your [Ansible Container](https://github.com/ansible/ansible-container) project.
 
 To add an etcd service to your project, simply run the following:
